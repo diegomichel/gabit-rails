@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_16_031858) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_16_032845) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -24,6 +24,19 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_16_031858) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_logs_on_user_id"
+  end
+
+  create_table "rewards", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "title", default: "New reward"
+    t.integer "cost", default: 10
+    t.integer "order", default: 0
+    t.datetime "expire_at"
+    t.integer "minutes", default: 0
+    t.integer "uses", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_rewards_on_user_id"
   end
 
   create_table "tags", force: :cascade do |t|
@@ -64,6 +77,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_16_031858) do
   end
 
   add_foreign_key "logs", "users"
+  add_foreign_key "rewards", "users"
   add_foreign_key "tags", "users"
   add_foreign_key "tasks", "users"
 end
