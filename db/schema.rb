@@ -10,13 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_16_030256) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_16_031858) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   # Custom types defined in this database.
   # Note that some types may not work with other database engines. Be careful if changing database.
   create_enum "task_type", ["todo", "daily", "habit"]
+
+  create_table "logs", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "record", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_logs_on_user_id"
+  end
 
   create_table "tags", force: :cascade do |t|
     t.string "title"
@@ -55,6 +63,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_16_030256) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "logs", "users"
   add_foreign_key "tags", "users"
   add_foreign_key "tasks", "users"
 end
