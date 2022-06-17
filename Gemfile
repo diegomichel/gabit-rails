@@ -75,3 +75,8 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+# All runtime config comes from the UNIX environment
+# but we use dotenv to store that in files for
+# development and testing
+gem "dotenv-rails", groups: [:development, :test]
