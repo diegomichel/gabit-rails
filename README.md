@@ -5,6 +5,12 @@ application up and running.
 
 Things you may want to cover:
 
+TODO
+
+- [ ] Clone python project.
+- [ ] Adds the roulette of fortune, allows you to select tasks and a reward and then spin it for you to do something, or
+    win something
+
 * Ruby version
 
 * System dependencies
