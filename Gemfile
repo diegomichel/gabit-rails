@@ -80,3 +80,6 @@ end
 # but we use dotenv to store that in files for
 # development and testing
 gem "dotenv-rails", groups: [:development, :test]
+
+# Application Performance Monitor
+gem "newrelic_rpm"
