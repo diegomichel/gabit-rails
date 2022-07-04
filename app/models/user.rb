@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  has_many :tasks
-  has_many :tags
-  has_many :logs
-  has_many :rewards
+  has_many :tasks, dependent: :destroy
+  has_many :tags, dependent: :destroy
+  has_many :logs, dependent: :destroy
+  has_many :rewards, dependent: :destroy
 end

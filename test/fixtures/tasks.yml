@@ -1,19 +1,19 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  value: 1
-  type: 
-  order: 1
-  completed_at: 2022-06-15 20:08:18
-  minutes_to_complete: 1
-  completed_count: 1
-
-two:
-  title: MyString
-  value: 1
-  type: 
-  order: 1
-  completed_at: 2022-06-15 20:08:18
-  minutes_to_complete: 1
-  completed_count: 1
+# one:
+#   title: MyString
+#   value: 1
+#   type: 
+#   order: 1
+#   completed_at: 2022-06-15 20:08:18
+#   minutes_to_complete: 1
+#   completed_count: 1
+#
+# two:
+#   title: MyString
+#   value: 1
+#   type: 
+#   order: 1
+#   completed_at: 2022-06-15 20:08:18
+#   minutes_to_complete: 1
+#   completed_count: 1
